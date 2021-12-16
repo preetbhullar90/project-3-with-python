@@ -331,7 +331,7 @@ def play_game(words):
             ". Better luck next time !",
         )
         print("\n")
-        playgame_again()
+    playgame_again()
 
 
 def display_hangman(user_tries):
