@@ -272,3 +272,62 @@ def play_game(words):
                     "You have", user_tries - 1, "tries left")
                 user_tries -= 1
                 word_guess_letter.append(letter_guess)
+            else:
+                print(
+                    Fore.GREEN + Style.BRIGHT + NAME.capitalize(),
+                    "you are doing well,",
+                    letter_guess.upper(),
+                    "is in the word!" + Fore.BLUE,
+                )
+                word_guess_letter.append(letter_guess)
+                word_as_list = list(words_complete)
+                indices = [
+                    i for i, letters in enumerate(words)
+                    if letters == letter_guess
+                ]
+                for index in indices:
+                    word_as_list[index] = letter_guess
+                words_complete = "".join(word_as_list)
+                if "-" not in words_complete:
+                    word_guess = True
+        elif len(letter_guess) == len(words) and letter_guess.isalpha():
+            if letter_guess in word_guess_words:
+                print(
+                    Fore.RED + Style.BRIGHT + " has already been tried",
+                    letter_guess.upper() + "!",
+                    Fore.BLUE,
+                )
+            elif letter_guess != words:
+                print(
+                    Fore.RED + Style.BRIGHT + letter_guess.upper(),
+                    "is not a part of the word :(",
+                    Fore.BLUE,
+                )
+                user_tries -= 1
+                word_guess_words.append(letter_guess)
+            else:
+                word_guess = True
+                words_complete = words
+        else:
+            print(Fore.RED + Style.BRIGHT + "This is an invalid input",
+                  Fore.BLUE)
+        print(Fore.BLUE + Style.BRIGHT + display_hangman(user_tries))
+        print(Fore.BLUE + Style.BRIGHT + words_complete)
+        print("\n")
+    if word_guess:
+        print(
+            Fore.GREEN + Style.BRIGHT + "Congratulations!,",
+            NAME.capitalize(),
+            "you guessed the word correctly!",
+            Fore.BLUE,
+        )
+        print("\n")
+    else:
+        print(
+            Fore.BLUE + Style.BRIGHT + "Sorry,",
+            NAME.capitalize(),
+            " you ran out of tries.The correct word was ",
+            Fore.RED + Style.BRIGHT + words + Fore.BLUE + Style.BRIGHT,
+            ". Better luck next time !",
+        )
+        print("\n")
