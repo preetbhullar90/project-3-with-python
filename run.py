@@ -214,3 +214,4 @@ def random_word():
         play_game(word)
     else:
         os.system("cls" if os.name == "nt" else "clear")
+        game_instruction()
