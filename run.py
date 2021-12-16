@@ -16,3 +16,14 @@ CREDS = Credentials.from_service_account_file("creds.json")
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("hangman_game")
+
+
+def get_all_words():
+    """
+    This function is for to
+    get all the words from the gspread sheet.
+    """
+    lists = SHEET.worksheet("words_List").get_all_values()
+    for item in lists:
+        word_list = item
+        return word_list
