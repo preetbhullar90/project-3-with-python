@@ -79,3 +79,26 @@ def welcome_game():
         )
         time.sleep(0.5)
         random_word()
+
+
+def game_instruction():
+    """
+    while loop  will continue to run until the user selects the N or Y option.
+    if the user selects Y then the game will start
+    and if the N option is selected the game will end.
+    """
+    print(Fore.YELLOW + Style.BRIGHT + "wait...")
+    time.sleep(0.5)
+    os.system("cls" if os.name == "nt" else "clear")
+    print(
+        Fore.BLUE + Style.BRIGHT + "\033[1;34mHow to play:\n\n1. "
+        "You need to guess the word correctly from the word list."
+        "\n2. You need to write a letter "
+        "of your choice and press enter.\n3. If your guess is correct,"
+        "then the "
+        "letter will show within the dashes in the row.\n4. If your guess is "
+        "wrong, then you will lose 1 life out of 7 and"
+        " you will get a image of a hangman.\n5. You "
+        "can play until you run out of"
+        " lives or you guess all the letters.\n"
+    )
