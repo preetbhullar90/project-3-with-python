@@ -174,3 +174,12 @@ def playgame_again():
             "for playing, see you again",
         )
         print("\n")
+        print(
+            """
+ dP""b8  dP"Yb   dP"Yb  8888b.      88""Yb Yb  dP 888888
+dP   `" dP   Yb dP   Yb  8I  Yb     88__dP  YbdP  88__
+Yb  "88 Yb   dP Yb   dP  8I  dY     88""Yb   8P   88""
+ YboodP  YbodP   YbodP  8888Y"      88oodP  dP    888888
+
+"""
+        )
