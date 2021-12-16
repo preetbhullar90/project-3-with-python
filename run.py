@@ -183,3 +183,34 @@ Yb  "88 Yb   dP Yb   dP  8I  dY     88""Yb   8P   88""
 
 """
         )
+
+
+def random_word():
+    """
+    In this function while loop runs until the user does not select the Y or I
+    option.This function runs after when the user enters their name.
+    If the user selects I they will get instructions or If the user selects
+    Y then, they will go straight to the game.
+    """
+    print("\n")
+    get_ready = input(
+        Fore.YELLOW + Style.BRIGHT + NAME.capitalize() +
+        " Please press Y to play"
+        " and press I for instructions: "
+    ).upper()
+    while get_ready != "Y" and get_ready != "I":
+        os.system("cls" if os.name == "nt" else "clear")
+        get_ready = input(
+            Fore.YELLOW + Style.BRIGHT + NAME.capitalize() + ","
+            "are you ready to play"
+            "if YES press Y if NO press N: "
+        ).upper()
+    if get_ready == "Y":
+        print("\n")
+        print(Fore.YELLOW + Style.BRIGHT, "Game loading...")
+        time.sleep(2)
+        os.system("cls" if os.name == "nt" else "clear")
+        word = random.choice(get_all_words())
+        play_game(word)
+    else:
+        os.system("cls" if os.name == "nt" else "clear")
