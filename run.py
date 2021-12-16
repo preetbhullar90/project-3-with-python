@@ -129,3 +129,15 @@ def game_instruction():
             "for trying see you again when you are ready",
         )
         print("\n")
+        print(
+            """
+        O)) O))   O))      O))O))))))))
+        O)    O))  O))    O)) O))
+        O)     O))  O)) O))   O))
+        O))) O)       O))     O))))))
+        O)     O))    O))     O))
+        O)      O)    O))     O))
+        O)))) O))     O))     O))))))))
+
+                """
+        )
