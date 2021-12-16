@@ -142,3 +142,35 @@ def game_instruction():
 
                 """
         )
+
+
+def playgame_again():
+    """
+    This function is for playing again.
+    while loop runs until the user has  not selected Y or N.
+    If user selects Y game will run again, but if user selects N the
+    game will exit with their username and a nice message.
+    """
+    play_again = input(
+        Fore.YELLOW + Style.BRIGHT + "Would you like to play "
+        "again? If Yes press Y If No press N: "
+    ).upper()
+    while play_again != "Y" and play_again != "N":
+        os.system("cls" if os.name == "nt" else "clear")
+        play_again = input(
+            Fore.YELLOW + Style.BRIGHT + "Would you like to play again? "
+            "If Yes press Y If No press N: "
+        ).upper()
+    if play_again == "Y":
+        time.sleep(0.5)
+        os.system("cls" if os.name == "nt" else "clear")
+        word = random.choice(get_all_words())
+        play_game(word)
+    else:
+        os.system("cls" if os.name == "nt" else "clear")
+        print(
+            Style.BRIGHT + Fore.BLUE + "Thank you,",
+            NAME.capitalize(),
+            "for playing, see you again",
+        )
+        print("\n")
