@@ -410,3 +410,6 @@ def display_hangman(user_tries):
         """,
     ]
     return image_stages[user_tries]
+
+
+welcome_game()
