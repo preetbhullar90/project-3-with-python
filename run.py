@@ -215,3 +215,29 @@ def random_word():
     else:
         os.system("cls" if os.name == "nt" else "clear")
         game_instruction()
+
+
+def play_game(words):
+    """
+    In this function I used loops and many if else statments to get the words.
+    While loop runs until the user does not use all the tries available.
+    6 chances are availble before the game will end.
+    this function prompts the user to enter a letter if an incorrect letter or
+    invalid charecter is entered  the user will recive
+    a message according to their input.
+    """
+    words_complete = "-" * len(words)
+    time.sleep(0.5)
+    word_guess = False
+    word_guess_letter = []
+    word_guess_words = []
+    user_tries = 6
+    letter = []
+
+    print(Fore.YELLOW + Style.BRIGHT + "wait...")
+    time.sleep(0.5)
+    os.system("cls" if os.name == "nt" else "clear")
+    print(Fore.BLUE + Style.BRIGHT + display_hangman(user_tries))
+    print(Style.BRIGHT + words_complete)
+    time.sleep(0.5)
+    print("\n")
