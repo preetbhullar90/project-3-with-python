@@ -41,7 +41,6 @@ def welcome_game():
     global NAME
     NAME = input(Fore.YELLOW + Style.BRIGHT + "Please enter your name: ")
     print("\n")
-    print(Fore.YELLOW + Style.BRIGHT + "wait...")
     time.sleep(2)
     os.system("cls" if os.name == "nt" else "clear")
     print("\n")
