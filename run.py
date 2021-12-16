@@ -6,9 +6,8 @@ import random
 import time
 import gspread
 from google.oauth2.service_account import Credentials
-from colorama import init
 from colorama import Fore, Style
-init()
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
