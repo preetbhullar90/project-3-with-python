@@ -241,3 +241,34 @@ def play_game(words):
     print(Style.BRIGHT + words_complete)
     time.sleep(0.5)
     print("\n")
+    while not word_guess and user_tries > 0:
+        letter_guess = input(
+            Fore.YELLOW + Style.BRIGHT + "Guess a letter or word: "
+        ).upper()
+        os.system("cls" if os.name == "nt" else "clear")
+        letter.append(letter_guess)
+        print(
+            Fore.BLUE + Style.BRIGHT +
+            "You used these letters: " + ", ".join(letter))
+        print("\n")
+        if len(letter_guess) == 1 and letter_guess.isalpha():
+            if letter_guess in word_guess_letter:
+                print(
+                    Fore.RED +
+                    Style.BRIGHT +
+                    "you have already selected the letter " +
+                    letter_guess.upper() +
+                    "!" + Fore.BLUE
+                )
+            elif letter_guess not in words:
+                print(
+                    Fore.RED + Style.BRIGHT + letter_guess.upper(),
+                    " is not a part of the word :(",
+                    Fore.BLUE,
+                )
+                print("\n")
+                print(
+                    NAME.capitalize(),
+                    "You have", user_tries - 1, "tries left")
+                user_tries -= 1
+                word_guess_letter.append(letter_guess)
