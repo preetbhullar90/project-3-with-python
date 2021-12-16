@@ -3,6 +3,7 @@ import colorama, os,random,google-auth and gspread link with run.py.
 """
 import os
 import random
+import time
 import gspread
 from google.oauth2.service_account import Credentials
 from colorama import Fore, Style
