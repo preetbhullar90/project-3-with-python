@@ -102,3 +102,30 @@ def game_instruction():
         "can play until you run out of"
         " lives or you guess all the letters.\n"
     )
+    print(
+        Fore.YELLOW + Style.BRIGHT + NAME.capitalize() +
+        " are you ready to play?")
+    ready = input(
+        Fore.YELLOW + Style.BRIGHT +
+        "Please press Y for" " YES or press N for NO : "
+    ).upper()
+    while ready != "Y" and ready != "N":
+        os.system("cls" if os.name == "nt" else "clear")
+        ready = input(
+            Fore.YELLOW + Style.BRIGHT + NAME.capitalize() +
+            " Please press Y for"
+            "YES or press N for NO: "
+        ).upper()
+    if ready == "Y":
+        time.sleep(0.5)
+        os.system("cls" if os.name == "nt" else "clear")
+        word = random.choice(get_all_words())
+        play_game(word)
+    else:
+        os.system("cls" if os.name == "nt" else "clear")
+        print(
+            Style.BRIGHT + Fore.BLUE + "Thank you,",
+            NAME.capitalize(),
+            "for trying see you again when you are ready",
+        )
+        print("\n")
