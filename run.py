@@ -331,3 +331,4 @@ def play_game(words):
             ". Better luck next time !",
         )
         print("\n")
+        playgame_again()
