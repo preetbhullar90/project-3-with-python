@@ -39,6 +39,32 @@ def welcome_game():
     the username and hangman text.
     """
     print("\n")
+    print("""
+
+             ||
+             ||
+         _.-.||
+       /'_.  ||
+      (/?  &/||
+        <   (//)
+         (_/|  /)
+         .((-~~~');
+       /~        . ;
+      (    |     |  )
+       |~-/'     |~|'
+       |  )      | )
+       | .'   __.'.'
+       | :`~~~   ))
+       (w)     _/'
+         |  ~i~ |
+         |   |  |
+         (   |  (
+         |   |  |
+         |   |-.'
+         )~-.'_)
+        /  /''
+        `-'
+    """)
     global NAME
     NAME = input(Fore.YELLOW + Style.BRIGHT + "Please enter your name: ")
     print("\n")
