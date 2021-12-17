@@ -96,9 +96,8 @@ def game_instruction():
         "You need to guess the word correctly from the word list."
         "\n2. You need to write a letter "
         "of your choice and press enter.\n3. If your guess is correct,"
-        "then the "
-        "letter will show within the dashes in the row.\n4. If your guess is "
-        "wrong, then you will lose 1 life out of 7 and"
+        "then the letter will show within the dashes in the row."
+        "\n4. If your guess is wrong, then you will lose 1 life out of 7 and"
         " you will get a image of a hangman.\n5. You "
         "can play until you run out of"
         " lives or you guess all the letters.\n"
@@ -326,9 +325,9 @@ def play_game(words):
         print(
             Fore.BLUE + Style.BRIGHT + "Sorry,",
             NAME.capitalize(),
-            " you ran out of tries.The correct word was ",
-            Fore.RED + Style.BRIGHT + words + Fore.BLUE + Style.BRIGHT,
-            ". Better luck next time !",
+            " you ran out of tries.The correct word was",
+            Fore.RED + Style.BRIGHT + words + Fore.BLUE + Style.BRIGHT, ',',
+            "Better luck next time !",
         )
         print("\n")
     playgame_again()
