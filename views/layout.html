@@ -3,18 +3,16 @@
 
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta charset="UTF-8" />
+    <meta name="theme-color" content="#000" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    @{import('head', 'meta')}
 
-    <link rel='icon' sizes="any"
+
+    <link rel='icon'
     href="https://thefinancialexpress.com.bd/uploads/1538459596.jpg" />
     <title>Hangman Game</title>
-</head>
-<body>
-    <style>
+
+<style>
         body {
             margin: 0px;
             text-align: center;
@@ -177,7 +175,7 @@
             width: 200px;
             height: 40px;
             background-color: #10ABE8;
-            border: 2px solid #fff;
+            border-width: 0;
             color: white;
             text-transform: uppercase;
             margin: 10px;
@@ -185,9 +183,14 @@
             font-weight: 600;
             letter-spacing: 1px;
             cursor: pointer;
+            box-shadow: 1px 1px 10px #fff;
         }
-    </style>
-
-<div>@{body}</div>
+        button:hover{
+            background-color: #46BCEA;
+        }
+</style>
+</head>
+<body>
+@{body}
 </body>
 </html>
