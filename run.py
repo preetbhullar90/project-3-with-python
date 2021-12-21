@@ -1,17 +1,17 @@
 """
 import colorama, os,random,google-auth and gspread link with run.py.
 """
-import os
 import random
 import time
 import gspread
 from google.oauth2.service_account import Credentials
 from colorama import Fore, Style
-from hangman_images.ascii_art import hangman_ascii_text
-from hangman_images.ascii_art import user_no_ready
-from hangman_images.ascii_art import after_finish_game
-from hangman_images.display_image import display_hangman
-from hangman_images.ascii_art import welcome_hangman
+from classes.ascii_art import hangman_ascii_text
+from classes.ascii_art import user_no_ready
+from classes.ascii_art import after_finish_game
+from classes.display_image import display_hangman
+from classes.ascii_art import welcome_hangman
+from classes.terminal_clear import ClearDisplay
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -24,160 +24,154 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("hangman_game")
 
 
-def get_all_words():
+class Start(ClearDisplay):
     """
-    This function is for to
-    get all the words from the gspread sheet.
+    Creates object and play the game by
+    calling object of the other classes
     """
-    lists = SHEET.worksheet("words_List").get_all_values()
-    for item in lists:
-        word_list = item
-        return word_list
 
+    def __init__(self):
+        self.welcome_game()
 
-def welcome_game():
-    """
-    Get name input from the users.
-    while loop runs until the user does not provide a valid input.
-    If the input is valid the user will see a welcome message with
-    the username and hangman text.
-    """
-    welcome_hangman()
-    print("\n")
-    time.sleep(.5)
-    global NAME
-    NAME = input(Fore.YELLOW + Style.BRIGHT + "Please enter your name: ")
-    print("\n")
-    print("wait...")
-    time.sleep(2)
-    os.system("cls" if os.name == "nt" else "clear")
-    print("\n")
-    while not NAME.isalpha() or len(NAME) < 2:
+    def get_all_words(self):
+        """
+        This function is for to
+        get all the words from the gspread sheet.
+        """
+        lists = SHEET.worksheet("words_List").get_all_values()
+        for item in lists:
+            word_list = item
+            return word_list
+
+    def welcome_game(self):
+        """
+        Get name input from the users.
+        while loop runs until the user does not provide a valid input.
+        If the input is valid the user will see a welcome message with
+        the username and hangman text.
+        """
+        welcome_hangman()
+        print("\n")
+        time.sleep(.5)
+        global NAME
+        NAME = input(Fore.YELLOW + Style.BRIGHT + "Please enter your name: ")
         print("\n")
         print("wait...")
         time.sleep(2)
-        os.system("cls" if os.name == "nt" else "clear")
-        print(
-            Fore.RED + "Sorry, Your name is invalid, please "
-            "enter your full name in letters\n"
-        )
+        self.clear_terminal()
         print("\n")
-        NAME = input(Fore.YELLOW + Style.BRIGHT + "Please enter your name: ")
-    else:
-        print("\n")
-        print("Game loading...")
-        print("\n")
-        time.sleep(2)
-        os.system("cls" if os.name == "nt" else "clear")
-        print("\033[1;34m")
-        hangman_ascii_text()
+        while not NAME.isalpha() or len(NAME) < 2:
+            print("\n")
+            print("wait...")
+            time.sleep(2)
+            self.clear_terminal()
+            print(
+                Fore.RED + "Sorry, Your name is invalid, please "
+                "enter your full name in letters\n"
+            )
+            print("\n")
+            NAME = input(Fore.YELLOW + Style.BRIGHT +
+                         "Please enter your name: ")
+        else:
+            print("\n")
+            print("Game loading...")
+            print("\n")
+            time.sleep(2)
+            self.clear_terminal()
+            print("\033[1;34m")
+            hangman_ascii_text()
+            time.sleep(0.5)
+            self.random_word()
+
+    def game_instruction(self):
+        """
+        while loop  will continue to run until the user
+        selects the N or Y option.
+        if the user selects Y then the game will start
+        and if the N option is selected the game will end.
+        """
+        print(Fore.YELLOW + Style.BRIGHT + "wait...")
         time.sleep(0.5)
-        random_word()
-
-
-def game_instruction():
-    """
-    while loop  will continue to run until the user selects the N or Y option.
-    if the user selects Y then the game will start
-    and if the N option is selected the game will end.
-    """
-    print(Fore.YELLOW + Style.BRIGHT + "wait...")
-    time.sleep(0.5)
-    os.system("cls" if os.name == "nt" else "clear")
-    print(
-        Fore.BLUE + Style.BRIGHT + "\033[1;34mHow to play:\n\n1. "
-        "You need to guess the word correctly from the word list."
-        "\n2. You need to write a letter "
-        "of your choice and press enter.\n3. If your guess is correct,"
-        "then the "
-        "letter will show within the dashes in the row.\n4. If your guess is "
-        "wrong, then you will lose 1 life out of 7 and"
-        " you will get a image of a hangman.\n5. You "
-        "can play until you run out of"
-        " lives or you guess all the letters.\n"
-    )
-    print(
-        Fore.YELLOW + Style.BRIGHT + NAME.capitalize() +
-        " are you ready to play?")
-    ready = input(
-        "Please press Y for" " YES or press N for NO : "
-        ).upper()
-    while ready != "Y" and ready != "N":
-        os.system("cls" if os.name == "nt" else "clear")
+        self.clear_terminal()
+        print(
+            Fore.BLUE + Style.BRIGHT + "\033[1;34mHow to play:\n\n1. "
+            "You need to guess the word correctly from the word list."
+            "\n2. You need to write a letter "
+            "of your choice and press enter.\n3. If your guess is correct,"
+            "then the "
+            "letter will show within the dashes in the row.\n4. If your"
+            "guess is "
+            "wrong, then you will lose 1 life out of 7 and"
+            " you will get a image of a hangman.\n5. You "
+            "can play until you run out of"
+            " lives or you guess all the letters.\n"
+        )
+        print(
+            Fore.YELLOW + Style.BRIGHT + NAME.capitalize() +
+            " are you ready to play?")
         ready = input(
-            NAME.capitalize() +
-            " Please press Y for YES or press N for NO: "
-        ).upper()
-    if ready == "Y":
-        time.sleep(0.5)
-        os.system("cls" if os.name == "nt" else "clear")
-        word = random.choice(get_all_words())
-        play_game(word)
-    else:
-        os.system("cls" if os.name == "nt" else "clear")
-        print(
-            Style.BRIGHT + Fore.BLUE + "Thank you,",
-            NAME.capitalize(),
-            "for trying see you again when you are ready",
-        )
-        print("\n")
-        user_no_ready()
+            "Please press Y for" " YES or press N for NO : "
+            ).upper()
+        while ready != "Y" and ready != "N":
+            self.clear_terminal()
+            ready = input(
+                NAME.capitalize() +
+                " Please press Y for YES or press N for NO: "
+            ).upper()
+        if ready == "Y":
+            time.sleep(0.5)
+            self.clear_terminal()
+            word = random.choice(self.get_all_words())
+            self.play_game(word)
+        else:
+            self.clear_terminal()
+            print(
+                Style.BRIGHT + Fore.BLUE + "Thank you,",
+                NAME.capitalize(),
+                "for trying see you again when you are ready",
+            )
+            print("\n")
+            user_no_ready()
 
-
-def playgame_again():
-    """
-    This function is for playing again.
-    while loop runs until the user has  not selected Y or N.
-    If user selects Y game will run again, but if user selects N the
-    game will exit with their username and a nice message.
-    """
-    play_again = input(
-        Fore.YELLOW + Style.BRIGHT + "Would you like to play "
-        "again? If Yes press Y If No press N: "
-    ).upper()
-    while play_again != "Y" and play_again != "N":
-        os.system("cls" if os.name == "nt" else "clear")
+    def playgame_again(self):
+        """
+        This function is for playing again.
+        while loop runs until the user has  not selected Y or N.
+        If user selects Y game will run again, but if user selects N the
+        game will exit with their username and a nice message.
+        """
         play_again = input(
-            "Would you like to play again? "
-            "If Yes press Y If No press N: "
+            Fore.YELLOW + Style.BRIGHT + "Would you like to play "
+            "again? If Yes press Y If No press N: "
         ).upper()
-    if play_again == "Y":
-        time.sleep(0.5)
-        os.system("cls" if os.name == "nt" else "clear")
-        word = random.choice(get_all_words())
-        play_game(word)
-    else:
-        os.system("cls" if os.name == "nt" else "clear")
-        print(
-            Style.BRIGHT + Fore.BLUE + "Thank you,", NAME.capitalize(),
-            "for playing, see you again",
-        )
-        print("\n")
-        after_finish_game()
+        while play_again != "Y" and play_again != "N":
+            self.clear_terminal()
+            play_again = input(
+                "Would you like to play again? "
+                "If Yes press Y If No press N: "
+            ).upper()
+        if play_again == "Y":
+            time.sleep(0.5)
+            self.clear_terminal()
+            word = random.choice(self.get_all_words())
+            self.play_game(word)
+        else:
+            self.clear_terminal()
+            print(
+                Style.BRIGHT + Fore.BLUE + "Thank you,", NAME.capitalize(),
+                "for playing, see you again",
+            )
+            print("\n")
+            after_finish_game()
 
-
-def random_word():
-    """
-    In this function while loop runs until the user does not select the Y or I
-    option.This function runs after when the user enters their name.
-    If the user selects I they will get instructions or If the user selects
-    Y then, they will go straight to the game.
-    """
-    print(f"{' Main Menu ' :-^80}")
-    print('\n\n')
-    print(f"{' Y: Play  ':^80}")
-    print('\n')
-    print(f"{' I: Instruction ':^80}")
-    print('\n')
-    print(f"{' Q: Quit ':^80}")
-    print('\n')
-    get_ready = input(
-        Fore.YELLOW + Style.BRIGHT + NAME.capitalize() + ","
-        " Please choose your choice (Y, I, Q): ").upper()
-    while get_ready != "Y" and get_ready != "I" and get_ready != "Q":
-        os.system("cls" if os.name == "nt" else "clear")
-        print(Style.BRIGHT + Fore.BLUE)
-        hangman_ascii_text()
+    def random_word(self):
+        """
+        In this function while loop runs until
+        the user does not select the Y or I
+        option.This function runs after when the user enters their name.
+        If the user selects I they will get instructions or If the user selects
+        Y then, they will go straight to the game.
+        """
         print(f"{' Main Menu ' :-^80}")
         print('\n\n')
         print(f"{' Y: Play  ':^80}")
@@ -189,141 +183,159 @@ def random_word():
         get_ready = input(
             Fore.YELLOW + Style.BRIGHT + NAME.capitalize() + ","
             " Please choose your choice (Y, I, Q): ").upper()
-    if get_ready == "Y":
-        print("\n")
-        print("Game loading...")
-        time.sleep(2)
-        os.system("cls" if os.name == "nt" else "clear")
-        word = random.choice(get_all_words())
-        play_game(word)
-    elif get_ready == "I":
-        os.system("cls" if os.name == "nt" else "clear")
-        game_instruction()
-    elif get_ready == "Q":
-        os.system("cls" if os.name == "nt" else "clear")
-        print(
-            Style.BRIGHT + Fore.BLUE + "Thank you,", NAME.capitalize(),
-            "for trying see you again when you are ready",
-        )
-        print("\n")
-        user_no_ready()
-    else:
-        random_word()
-
-
-def play_game(words):
-    """
-    In this function I used loops and many if else statments to get the words.
-    While loop runs until the user does not use all the tries available.
-    6 chances are availble before the game will end.
-    this function prompts the user to enter a letter if an incorrect letter or
-    invalid charecter is entered  the user will recive
-    a message according to their input.
-    """
-    words_complete = "-" * len(words)
-    time.sleep(0.5)
-    word_guess = False
-    word_guess_letter = []
-    word_guess_words = []
-    user_tries = 6
-    letter = []
-
-    print(Fore.YELLOW + Style.BRIGHT + "wait...")
-    time.sleep(0.5)
-    os.system("cls" if os.name == "nt" else "clear")
-    print(Fore.BLUE + Style.BRIGHT + display_hangman(user_tries))
-    print(Style.BRIGHT + words_complete)
-    time.sleep(0.5)
-    print("\n")
-    while not word_guess and user_tries > 0:
-        letter_guess = input(
-            Fore.YELLOW + Style.BRIGHT + "Guess a letter or word: ").upper()
-        os.system("cls" if os.name == "nt" else "clear")
-        letter.append(letter_guess)
-        print(
-            Fore.BLUE + Style.BRIGHT +
-            "You used these letters: " + ", ".join(letter))
-        print("\n")
-        if len(letter_guess) == 1 and letter_guess.isalpha():
-            if letter_guess in word_guess_letter:
-                print(
-                    Fore.RED +
-                    Style.BRIGHT +
-                    "you have already selected the letter " +
-                    letter_guess.upper() + "!" + Fore.BLUE
-                )
-            elif letter_guess not in words:
-                print(
-                    Fore.RED + Style.BRIGHT + letter_guess.upper(),
-                    " is not a part of the word :(",
-                    Fore.BLUE,
-                )
-                print("\n")
-                print(
-                    NAME.capitalize(),
-                    "You have", user_tries - 1, "tries left")
-                user_tries -= 1
-                word_guess_letter.append(letter_guess)
-            else:
-                print(
-                    Fore.GREEN + Style.BRIGHT + NAME.capitalize(),
-                    "you are doing well,",
-                    letter_guess.upper(),
-                    "is in the word!" + Fore.BLUE,
-                )
-                word_guess_letter.append(letter_guess)
-                word_as_list = list(words_complete)
-                indices = [
-                    i for i, letters in enumerate(words)
-                    if letters == letter_guess
-                ]
-                for index in indices:
-                    word_as_list[index] = letter_guess
-                words_complete = "".join(word_as_list)
-                if "-" not in words_complete:
-                    word_guess = True
-        elif len(letter_guess) == len(words) and letter_guess.isalpha():
-            if letter_guess in word_guess_words:
-                print(
-                    Fore.RED + Style.BRIGHT + " has already been tried",
-                    letter_guess.upper() + "!",
-                    Fore.BLUE,
-                )
-            elif letter_guess != words:
-                print(
-                    letter_guess.upper(),
-                    "is not a part of the word :(",
-                    Fore.BLUE,
-                )
-                user_tries -= 1
-                word_guess_words.append(letter_guess)
-            else:
-                word_guess = True
-                words_complete = words
+        while get_ready != "Y" and get_ready != "I" and get_ready != "Q":
+            self.clear_terminal()
+            print(Style.BRIGHT + Fore.BLUE)
+            hangman_ascii_text()
+            print(f"{' Main Menu ' :-^80}")
+            print('\n\n')
+            print(f"{' Y: Play  ':^80}")
+            print('\n')
+            print(f"{' I: Instruction ':^80}")
+            print('\n')
+            print(f"{' Q: Quit ':^80}")
+            print('\n')
+            get_ready = input(
+                Fore.YELLOW + Style.BRIGHT + NAME.capitalize() + ","
+                " Please choose your choice (Y, I, Q): ").upper()
+        if get_ready == "Y":
+            print("\n")
+            print("Game loading...")
+            time.sleep(2)
+            self.clear_terminal()
+            word = random.choice(self.get_all_words())
+            self.play_game(word)
+        elif get_ready == "I":
+            self.clear_terminal()
+            self.game_instruction()
+        elif get_ready == "Q":
+            self.clear_terminal()
+            print(
+                Style.BRIGHT + Fore.BLUE + "Thank you,", NAME.capitalize(),
+                "for trying see you again when you are ready",
+            )
+            print("\n")
+            user_no_ready()
         else:
-            print("This is an invalid input",
-                  Fore.BLUE)
+            self.random_word()
+
+    def play_game(self, words):
+        """
+        In this function I used loops and many
+        if else statments to get the words.
+        While loop runs until the user does not use
+        all the tries available.
+        6 chances are availble before the game will end.
+        this function prompts the user to enter a letter
+        if an incorrect letter or
+        invalid charecter is entered  the user will recive
+        a message according to their input.
+        """
+        words_complete = "-" * len(words)
+        time.sleep(0.5)
+        word_guess = False
+        word_guess_letter = []
+        word_guess_words = []
+        user_tries = 6
+        letter = []
+
+        print(Fore.YELLOW + Style.BRIGHT + "wait...")
+        time.sleep(0.5)
+        self.clear_terminal()
         print(Fore.BLUE + Style.BRIGHT + display_hangman(user_tries))
-        print(words_complete)
+        print(Style.BRIGHT + words_complete)
+        time.sleep(0.5)
         print("\n")
-    if word_guess:
-        print(
-            Fore.GREEN + Style.BRIGHT + "Congratulations!,",
-            NAME.capitalize(),
-            "you guessed the word correctly!",
-            Fore.BLUE,
-        )
-        print("\n")
-    else:
-        print(
-            Fore.BLUE + Style.BRIGHT + "Sorry,",
-            NAME.capitalize(),
-            " you ran out of tries.The correct word was ",
-            Fore.RED + Style.BRIGHT + words + Fore.BLUE + Style.BRIGHT,
-            ". Better luck next time !",
-        )
-        print("\n")
-    playgame_again()
+        while not word_guess and user_tries > 0:
+            letter_guess = input(
+                Fore.YELLOW + Style.BRIGHT + "Guess a letter or word: "
+                ).upper()
+            self.clear_terminal()
+            letter.append(letter_guess)
+            print(
+                Fore.BLUE + Style.BRIGHT +
+                "You used these letters: " + ", ".join(letter))
+            print("\n")
+            if len(letter_guess) == 1 and letter_guess.isalpha():
+                if letter_guess in word_guess_letter:
+                    print(
+                        Fore.RED +
+                        Style.BRIGHT +
+                        "you have already selected the letter " +
+                        letter_guess.upper() + "!" + Fore.BLUE
+                    )
+                elif letter_guess not in words:
+                    print(
+                        Fore.RED + Style.BRIGHT + letter_guess.upper(),
+                        " is not a part of the word :(",
+                        Fore.BLUE,
+                    )
+                    print("\n")
+                    print(
+                        NAME.capitalize(),
+                        "You have", user_tries - 1, "tries left")
+                    user_tries -= 1
+                    word_guess_letter.append(letter_guess)
+                else:
+                    print(
+                        Fore.GREEN + Style.BRIGHT + NAME.capitalize(),
+                        "you are doing well,",
+                        letter_guess.upper(),
+                        "is in the word!" + Fore.BLUE,
+                    )
+                    word_guess_letter.append(letter_guess)
+                    word_as_list = list(words_complete)
+                    indices = [
+                        i for i, letters in enumerate(words)
+                        if letters == letter_guess
+                    ]
+                    for index in indices:
+                        word_as_list[index] = letter_guess
+                    words_complete = "".join(word_as_list)
+                    if "-" not in words_complete:
+                        word_guess = True
+            elif len(letter_guess) == len(words) and letter_guess.isalpha():
+                if letter_guess in word_guess_words:
+                    print(
+                        Fore.RED + Style.BRIGHT + " has already been tried",
+                        letter_guess.upper() + "!",
+                        Fore.BLUE,
+                    )
+                elif letter_guess != words:
+                    print(
+                        letter_guess.upper(),
+                        "is not a part of the word :(",
+                        Fore.BLUE,
+                    )
+                    user_tries -= 1
+                    word_guess_words.append(letter_guess)
+                else:
+                    word_guess = True
+                    words_complete = words
+            else:
+                print("This is an invalid input",
+                      Fore.BLUE)
+            print(Fore.BLUE + Style.BRIGHT + display_hangman(user_tries))
+            print(words_complete)
+            print("\n")
+        if word_guess:
+            print(
+                Fore.GREEN + Style.BRIGHT + "Congratulations!,",
+                NAME.capitalize(),
+                "you guessed the word correctly!",
+                Fore.BLUE,
+            )
+            print("\n")
+        else:
+            print(
+                Fore.BLUE + Style.BRIGHT + "Sorry,",
+                NAME.capitalize(),
+                " you ran out of tries.The correct word was ",
+                Fore.RED + Style.BRIGHT + words + Fore.BLUE + Style.BRIGHT,
+                ". Better luck next time !",
+            )
+            print("\n")
+        self.playgame_again()
 
 
-welcome_game()
+Start()
