@@ -82,5 +82,21 @@ This is my 3rd project at code institute. I developed hangman the word game, whi
 * I used a font from [Colorama](https://pypi.org/project/colorama/), I imported colorama into the python terminal.
 * I used the font Bright for all the text.
 
+#### Imagery
+* I used one background image on the page. This image is of a hangman gallows.
+* I used this image to easily inform users that this website is about hangman. This image does not distract the user in game because I overlayed light colour on it.
+
+[Go Top](#Hangman-Game)
+
+## Features
+
+1. Starting page.
+2. Guess the word page.
+3. End game.
+4. Play again.
+
+#### Starting page :
+* On the starting page, users will get an input for entering their name, if the user enters fewer than 2 letters or digits, they will get an error message. If the user enters a valid name, then they will see their name below the hangman title text. After this step users will get 2 options either to see the instructions or to start playing the game. If the user selects the instructions option, they will see instructions about how to play this game and at the bottom of the instructions text, they will see 2 more options. The 2 options the user can choose from are “Are you ready to play?” if the user selects Y they will enter in the main game where they guess the word but if they select N then the terminal will exit with a message saying, “See you again, when you are ready”.
+
 
 
