@@ -58,3 +58,29 @@ This is my 3rd project at code institute. I developed hangman the word game, whi
 * As a new player, I want to see the correct or incorrect selected letters in the terminal while playing.
 * As a new player, I want this game to be challenging therefore I do not want access to the word list.
 
+#### Current users :
+* As a current player, I want random words every time.
+* As a current player, I should have fun with the game by ensuring it runs smoothly with interesting words.
+
+[Go Top](#Hangman-Game)
+
+## Target
+* In this game, I have added a background image of gallows as this directly relates to hangman.This sets the seen for the game.
+* At the starting of the game when the user enters their name if it’s a name made up of letters then the user will see a big title saying “Hangman”. I did this so the user can easily understand that they have entered the game correctly.
+* In the game, I have made the user chances visible. This has been done to make it easy for the user to know how they are progressing in the game and so they can see how many tries they have used and how they have left so they can play carefully.
+
+[Go Top](#Hangman-Game)
+
+## Design
+
+ ### Colour Schema
+* I used four colours in this game. The colour blue was used for the big Hangman title, Hangman images, and for tee instructions, Yellow was used for all the inputs, red was used for input of an invalid name, incorrect guess, and if the word/letter is not in the list and green was used if the user guesses the correct word/letter as well as If they win the game.
+* Colorama was used to import the colours into the python terminal.
+
+
+#### Typography
+* I used a font from [Colorama](https://pypi.org/project/colorama/), I imported colorama into the python terminal.
+* I used the font Bright for all the text.
+
+
+
