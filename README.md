@@ -72,7 +72,8 @@ This is my 3rd project at code institute. I developed hangman the word game, whi
 #### Skeleton
 * I used [Figma](https://www.figma.com/file/7ut2bGOE3cAV0KdPhhgvKx/hangman?node-id=0%3A1) Wireframe to attach the following pages:
 
-#### Desktop-Pages
+#### Desktop Tablet Mobile Page
+![](assets/readme-files/hangman-wireframe.PNG)
 
 [Go Top](#Hangman-Game)
 
@@ -121,7 +122,8 @@ This is my 3rd project at code institute. I developed hangman the word game, whi
 * The game is working smoothly. I didn’t leave any bugs in the game but there are 2 errors. The first error is (Global variable ‘Name’ undefined at the module level), and the second error is (Else clause on loop without a break statement).
 
 * I have included screenshots of the errors below:
-
+#### Error
+![](assets/readme-files/hangman-error.PNG)
 
 
 

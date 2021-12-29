@@ -94,14 +94,14 @@ class Start(ClearDisplay):
         time.sleep(0.5)
         self.clear_terminal()
         print(
-            Fore.BLUE + Style.BRIGHT + "\033[1;34mHow to play:\n\n1. "
+            Fore.BLUE + Style.BRIGHT + "\n\033[1;34mHow to play:\n\n1. "
             "You need to guess the word correctly from the word list."
             "\n2. You need to write a letter "
             "of your choice and press enter.\n3. If your guess is correct,"
-            "then the "
+            "then the \n"
             "letter will show within the dashes in the row.\n4. If your"
             "guess is "
-            "wrong, then you will lose 1 life out of 7 and"
+            "wrong, then you will lose 1 life out of 7 \n and"
             " you will get a image of a hangman.\n5. You "
             "can play until you run out of"
             " lives or you guess all the letters.\n"
