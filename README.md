@@ -69,6 +69,11 @@ This is my 3rd project at code institute. I developed hangman the word game, whi
 * At the starting of the game when the user enters their name if it’s a name made up of letters then the user will see a big title saying “Hangman”. I did this so the user can easily understand that they have entered the game correctly.
 * In the game, I have made the user chances visible. This has been done to make it easy for the user to know how they are progressing in the game and so they can see how many tries they have used and how they have left so they can play carefully.
 
+#### Skeleton
+* I used [Figma](https://www.figma.com/file/7ut2bGOE3cAV0KdPhhgvKx/hangman?node-id=0%3A1) Wireframe to attach the following pages:
+
+#### Desktop-Pages
+
 [Go Top](#Hangman-Game)
 
 ## Design
@@ -106,5 +111,17 @@ This is my 3rd project at code institute. I developed hangman the word game, whi
 
 #### Play again :
 * Users will get the play again option whether they win or lose. If they select Y they the game will restart with a new word. If they select N then they will get a message saying “thanks for playing see you again” with a big goodbye title after this they will exit the game.
+
+## Bugs
+* The first bug I was having issues with was getting a random word every time. The reason I had this bug was because my code was not using loop to cycle through the word list cells in gspread sheet.
+* I solved this problem with the help of stack overflow.
+
+
+## Issue Left
+* The game is working smoothly. I didn’t leave any bugs in the game but there are 2 errors. The first error is (Global variable ‘Name’ undefined at the module level), and the second error is (Else clause on loop without a break statement).
+
+* I have included screenshots of the errors below:
+
+
 
 
