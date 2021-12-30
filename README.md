@@ -150,4 +150,88 @@ This game is following this flow diagram:
 * The username is saved in the terminal where if the user exits the game and re-enters their name will already be there.
 * A feature that I would have liked to implement is a hangman background image in the terminal.
 
+## Technologies Used
 
+### Languages Used
+
+* [HTML5](https://en.wikipedia.org/wiki/HTML5)
+* [CSS3](https://en.wikipedia.org/wiki/CSS)
+* [JS](https://en.wikipedia.org/wiki/JavaScript)
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+### Frameworks Libraries and Programs Used
+
+* [Os](https://docs.python.org/3/library/os.html "Link to os homepage")
+* Os library was used to clear the previous print statement in the terminal.
+
+* [Colorama](https://pypi.org/project/colorama/ "Link to colorama homepage")
+* Colorama library was used to change the colours of texts.
+
+* [Time](https://www.pythoncentral.io/pythons-time-sleep-pause-wait-sleep-stop-your-code/ "Link to time homepage")
+* Time library was used to add delays in the functions.
+
+* [Random](https://www.programiz.com/python-programming/modules/random "Link to random homepage")
+* Random library was used to get random words from word list.
+
+* [Git](https://git-scm.com/ "Link to Git homepage")
+* Gitpod was used for writing the code in the terminal; it was also used to commit and push the code in GitHub.
+
+* [GitHub](https://github.com/ "Link to GitHub")
+* GitHub was used to store the data which was pushed by Gitpod.
+
+* [Figma](https://www.figma.com/ "Link to Figma homepage")
+* Figma was used to create the wireframe of the project before starting code on the terminal.
+
+* [Am I Responsive?](http://ami.responsivedesign.is/# "Link to Am I Responsive Homepage")
+* Am I Responsive? was used to see if the site is responsive on different types of devices.
+
+[Go Top](#Hangman-Game)
+
+## Testing
+All the testing information is found [here](assets/test-file/testings.md)
+
+## Deployment
+
+### Github Pages
+To deploy a GitHub Page from the GitHub Repository, the following options were used:
+
+1.	[Login](https://github.com/) into GitHub.
+
+2.	Click on your Repository, then click on the left side of the side bar or go to the right side to click on your profile and select your Repository option.
+
+3.	Click on the Setting option which is located on the top of your Project.
+
+4.	Scroll down and in the GitHub Pages option, click on the Check it out here! Link.
+
+5.	Under "Source", click the dropdown option called "None" and select "Master Branch".
+
+6.	Refresh your page on the top left corner with the circle button.
+
+7.	Scroll back down in GitHub Pages and again click on Check it out here!
+
+8.	The link is now published in the "GitHub Pages" section.
+
+### Make a Clone
+
+1. [Login](https://github.com/)
+
+2.	Click on Your Repository option and select your project
+
+3.	Click on the code dropdown menu.
+
+4.	To clone the repository using HTTPS, click "Clone with HTTPS", and copy the link.
+
+5.	In your local IDE open the Git Bash terminal.
+
+6.	Change the current working directory to the location where you want the cloned directory to be made.
+
+7.	Type git clone, and then paste the URL you copied in Step 3.
+
+           git clone https://github.com/USERNAME/REPOSITORY
+
+8.	Press Enter. Your local clone will be created.
+
+### Forking a Repository
+1.	[Login](https://github.com/) into GitHub
+2.	On the top right, click the fork button.
+3.	You will get a copy of the repository in your GitHub account.
