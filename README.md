@@ -15,27 +15,29 @@
 
 5. [Features](#Features)
 
-6. [Bugs](#Bugs)
+6.  [Flowchart](#Flowchart)
 
-7. [Other Features](#Other-Features)
+7. [Bugs](#Bugs)
 
-8. [Features Left to Implement](#Feature-Left-to-Implement)
+8. [Other Features](#Other-Features)
 
-9. [Technologies Used](#Technologies-Used)
+9. [Features Left to Implement](#Feature-Left-to-Implement)
 
-10. [Frameworks Libraries and Programs Used](#Frameworks-Libraries-and-Programs-Used)
+10. [Technologies Used](#Technologies-Used)
 
-11. [Testing](#Testing)
+11. [Frameworks Libraries and Programs Used](#Frameworks-Libraries-and-Programs-Used)
+
+12. [Testing](#Testing)
 
     - [Testings.md](assets/test-file/testings.md)
 
-12. [Deployment](#Deployment)
+13. [Deployment](#Deployment)
 
-13. [Make a clone](#Make-a-clone)
+14. [Make a clone](#Make-a-clone)
 
-14. [Credit](#Credit)
+15. [Credit](#Credit)
 
-15. [Acknowledgements](#Acknowledgements)
+16. [Acknowledgements](#Acknowledgements)
 ***
 
 ## Introduction
@@ -102,25 +104,26 @@ This is my 3rd project at code institute. I developed hangman the word game, whi
 4. Play again.
 
 #### Starting page :
-* On the starting page, users will get an input for entering their name, if the user enters fewer than 2 letters or digits, they will get an error message. If the user enters a valid name, then they will see their name below the hangman title text. After this step users will get 2 options either to see the instructions or to start playing the game. If the user selects the instructions option, they will see instructions about how to play this game and at the bottom of the instructions text, they will see 2 more options. The 2 options the user can choose from are “Are you ready to play?” if the user selects Y they will enter in the main game where they guess the word but if they select N then the terminal will exit with a message saying, “See you again, when you are ready”.
+* On the starting page, users will get an input for entering their name, if the user enters fewer than 2 letters or digits, they will get an error message. If the user enters a valid name, then they will see menu below the hangman title text. In this menu users will get 3 options either to see the instructions, quit or to start playing the game. If the user selects the instructions option, they will see instructions about how to play this game and at the bottom of the instructions text, they will see 2 more options. The 2 options the user can choose from are “Are you ready to play?” if the user selects Y they will enter in the main game where they guess the word but if they select N then the terminal will exit with a message saying, “See you again, when you are ready”.
 
-  All the images are found [here](assets/game-screenshot/screenshot.md)
+  ***All the images are found*** [here](assets/game-screenshot/screenshot.md)
 
 #### Guess the word page :
 * On the guess the word page, users will get an image of a hangman with a row of dashes, with 6 lives. On this page users have to guess letters of a word which is in the games word list, if the users guess is incorrect, they will see the next part of the hangman image and the user will lose 1 life, but if the user guesses the correct letter, then that letter is added in the row of dashes and hangman image and lives will stay same. When the user enters the correct letter, they will also get a message to say well-done with their username. If users select a letter they have used before they will receive a message saying “you have already tried this word and if users tried a number or other special character, then they will see the message that this letter is not in the word list. But the hangman image and lives will stay the same.
 
-  All the images are found [here](assets/game-screenshot/screenshot.md)
+  ***All the images are found*** [here](assets/game-screenshot/screenshot.md)
 
 #### End game :
 * At the end of the game, if the user guesses all the letters correctly, then the user will get a message saying “congratulations” or if the user guesses the letters incorrectly, and all their lives are lost then the users will get a full hangman image with the message “sorry your lives have run out” with the correct word which they were trying to guess at the end of the game.
 
-  All the images are found [here](assets/game-screenshot/screenshot.md)
+  ***All the images are found*** [here](assets/game-screenshot/screenshot.md)
 
 #### Play again :
 * Users will get the play again option whether they win or lose. If they select Y they the game will restart with a new word. If they select N then they will get a message saying “thanks for playing see you again” with a big goodbye title after this they will exit the game.
 
-  All the images are found [here](assets/game-screenshot/screenshot.md)
+  ***All the images are found*** [here](assets/game-screenshot/screenshot.md)
 
+## Flowchart
 This game is following this flow diagram:
 ![](assets/readme-files/diagram.png)
 
