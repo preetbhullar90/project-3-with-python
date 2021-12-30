@@ -192,24 +192,40 @@ All the testing information is found [here](assets/test-file/testings.md)
 
 ## Deployment
 
-### Github Pages
-To deploy a GitHub Page from the GitHub Repository, the following options were used:
+### Heroku Pages
+This site was deploy via Heroku.
 
-1.	[Login](https://github.com/) into GitHub.
+This project was developed using a template provide by code institute however the template was upgraded to improve its functionality, which you can see in the commit.
+To deploy this project on Heroku I used followed these steps:
 
-2.	Click on your Repository, then click on the left side of the side bar or go to the right side to click on your profile and select your Repository option.
+1. Sign up / Log in to Heroku.
 
-3.	Click on the Setting option which is located on the top of your Project.
+2. In the main Heroku dashboard select ‘New’in the top right corner.
 
-4.	Scroll down and in the GitHub Pages option, click on the Check it out here! Link.
+3. In the drop down, menu select ‘Create New App’.
 
-5.	Under "Source", click the dropdown option called "None" and select "Master Branch".
+4. Give a name related your project. I gave hangman-games to my project.
 
-6.	Refresh your page on the top left corner with the circle button.
+5. When you see green text with your project name then press ‘create app’button.
 
-7.	Scroll back down in GitHub Pages and again click on Check it out here!
+6. From the dashboard select ‘setting’option.
 
-8.	The link is now published in the "GitHub Pages" section.
+7. After select setting option scroll down in the config setting. Select the config vars section This will display the current config vars for the app, there should be nothing already there.
+
+8. After config var select Buildpacks option which is located under the config vars option.
+
+9. In the buildpacks select python pack first save it then repeat select nodejs pack and save it.
+
+10. After this scroll up and select ‘Deploy’ option.
+
+11. In the ‘deploy’ option select ‘GitHub’ option to select your project which one you want to deploy on Heroku, choose your project and connect to the Heroku.
+
+12. After connecting your project to Heroku scroll down on Automatic Deploys button.
+
+13. This will ensure whenever you change something in the repo and push the changes to GitHub, Heroku will rebuild the app. If you select this manually you can manually deploy options further down. For this project, I did Automatic Deployment to enable me to check changes I made to the app as I developed it.
+
+14. Heroku will now build the app for you. Once it has completed the build process you will see a 'Your App Was Successfully Deployed' message and a link to the app to visit the live site.
+
 
 ### Make a Clone
 
