@@ -148,7 +148,6 @@ This game is following this flow diagram:
 
 ### Feature Left to Implement
 * The username is saved in the terminal where if the user exits the game and re-enters their name will already be there.
-* A feature that I would have liked to implement is a hangman background image in the terminal.
 
 ## Technologies Used
 

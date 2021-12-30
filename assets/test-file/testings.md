@@ -97,3 +97,10 @@ The [PEP8 Online](http://pep8online.com/) service was used to validate the `Pyth
 ### **Ascii-text-image Page**
 ![](/assets/test-file/ascii-image.PNG)
 
+### Browser Validation
+- Chrome - [test image](/assets/test-file/browser-testing/chrome.PNG)
+- Edge - [test image](/assets/test-file/browser-testing/edge.PNG)
+- Opera - [test image](/assets/test-file/browser-testing/opera.PNG)
+- Firefox - [test image](/assets/test-file/browser-testing/firefox.PNG)
+
+[Go Top](#Table-of-contents)
