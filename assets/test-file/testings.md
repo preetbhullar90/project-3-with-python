@@ -44,3 +44,38 @@ The second option provided is for new players who are not familiar with the game
 [Go Top](#Table-of-contents)
 
 ## Manual File Test
+
+
+### Staring-Page
+![](/assets/test-file/test-image-1.gif)
+
+
+### Name-Validation
+![](/assets/test-file/test-image-2.gif)
+
+
+### Game-Menu
+![](/assets/test-file/test-image-3.gif)
+
+
+### Game-Instruction
+![](/assets/test-file/test-image-4.gif)
+
+[Go Top](#Table-of-contents)
+
+
+### Not-Guessed-word
+![](/assets/test-file/test-image-5.gif)
+
+### Guessed-word
+![](/assets/test-file/test-image-6.gif)
+
+### On-Tablet
+![](/assets/test-file/test-image-7.gif)
+
+### On-mobile
+![](/assets/test-file/test-image-8.gif)
+
+
+
+[Go Top](#Table-of-contents)
