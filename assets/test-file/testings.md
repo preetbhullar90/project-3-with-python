@@ -76,6 +76,24 @@ The second option provided is for new players who are not familiar with the game
 ### On-mobile
 ![](/assets/test-file/test-image-8.gif)
 
-
-
 [Go Top](#Table-of-contents)
+
+## Automated Testing
+
+### Code Validation
+The [PEP8 Online](http://pep8online.com/) service was used to validate the `Python` code used.
+
+**Results:**
+
+### **Run.py Page**
+![](/assets/test-file/run-py-image.PNG)
+
+### **Hangman-Images Page**
+![](/assets/test-file/display-hangman-image.PNG)
+
+### **Clear-terminal Page**
+![](/assets/test-file/clear-terminal-image.PNG)
+
+### **Ascii-text-image Page**
+![](/assets/test-file/ascii-image.PNG)
+
