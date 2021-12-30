@@ -173,6 +173,9 @@ This game is following this flow diagram:
 * [Random](https://www.programiz.com/python-programming/modules/random "Link to random homepage")
 * Random library was used to get random words from word list.
 
+* [Font Awesome](https://fontawesome.com/ "Link to FontAwesome")
+* I used Font awesome to get the play icon for the terminal button. I needed for my website.
+
 * [Git](https://git-scm.com/ "Link to Git homepage")
 * Gitpod was used for writing the code in the terminal; it was also used to commit and push the code in GitHub.
 
@@ -196,9 +199,10 @@ All the testing information is found [here](assets/test-file/testings.md)
 This site was deploy via Heroku.
 
 This project was developed using a template provide by code institute however the template was upgraded to improve its functionality, which you can see in the commit.
+
 To deploy this project on Heroku I used followed these steps:
 
-1. Sign up / Log in to Heroku.
+1. [Login](https://dashboard.heroku.com/apps) into Heroku.
 
 2. In the main Heroku dashboard select ‘New’in the top right corner.
 
@@ -248,6 +252,29 @@ To deploy this project on Heroku I used followed these steps:
 8.	Press Enter. Your local clone will be created.
 
 ### Forking a Repository
-1.	[Login](https://github.com/) into GitHub
+1.	[Login](https://github.com/) into GitHub.
+
 2.	On the top right, click the fork button.
+
 3.	You will get a copy of the repository in your GitHub account.
+
+## Credit
+
+### Media
+* It was very hard to find a background image for the hangman game. I searched on many websites but found it difficult to find an appropriate HD. The image that I selected was a downloaded background image from [pixabay](https://pixabay.com/illustrations/halloween-creepy-spooky-gallows-6749878/) and I converted it to an svg file.
+### Code
+To get a better understanding of the code and different features to add to the game I used the following sites to improve my knowledge:
+* [W3school](https://www.w3schools.com/)
+* [Stack Overflow](https://stackoverflow.com/)
+* [Google](https://www.google.co.uk/)
+
+* This [Youtube tutorial](https://www.youtube.com/watch?v=m4nEnsavl6w) helped me achieve the results I needed for my project.
+
+## Acknowledgements
+* I would especially like to thank my wife, who helped me by giving me some ideas regarding my website. She motivated me to finish this project to the best of my ability.
+* Secondly I would like to thank my mentor Seun, she helped during the whole process of the project.
+* Lastly I would like to acknowledge the W3School website as I gained many ideas from there.
+
+[Go Top](#Hangman-Game)
+
+
