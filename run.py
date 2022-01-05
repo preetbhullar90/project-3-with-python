@@ -253,7 +253,7 @@ class Start(ClearDisplay):
         print("\n")
         while not word_guess and user_tries > 0:
             letter_guess = input(Fore.YELLOW + Style.BRIGHT +
-                                 ' '*80, "Guess a letter or word: ").upper()
+                                 ' '*80 + "Guess a letter or word: ").upper()
             self.clear_terminal()
             letter.append(letter_guess)
             print(
