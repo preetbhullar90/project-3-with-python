@@ -60,7 +60,7 @@ class Start(ClearDisplay):
         time.sleep(2)
         self.clear_terminal()
         print("\n")
-        while not NAME.isalpha() or len(NAME) < 2:
+        while not NAME.isalpha() and NAME.isnumeric() or len(NAME) < 2:
             print("\n")
             print("wait...")
             time.sleep(2)
@@ -93,22 +93,27 @@ class Start(ClearDisplay):
         print(Fore.YELLOW + Style.BRIGHT + "wait...")
         time.sleep(0.5)
         self.clear_terminal()
-        print(
-            Fore.BLUE + Style.BRIGHT + "\n\033[1;34mHow to play:\n\n1. "
-            "You need to guess the word correctly from the word list."
-            "\n2. You need to write a letter "
-            "of your choice and press enter.\n3. If your guess is correct,"
-            "then the \n"
-            "letter will show within the dashes in the row.\n4. If your"
-            "guess is "
-            "wrong, then you will lose 1 life out of 7 \n and"
-            " you will get a image of a hangman.\n5. You "
-            "can play until you run out of"
-            " lives or you guess all the letters.\n"
-        )
+        print(Fore.BLUE + Style.BRIGHT + "\n\033[1;34mHow to play:\n\n ")
+        time.sleep(0.5)
+        print("\n1. You need to guess the word correctly from the word list.")
+        time.sleep(0.5)
+        print("\n2. You need to write a letter "
+              "of your choice and press enter.")
+        time.sleep(0.5)
+        print("\n3. If your guess is correct then the "
+              "letter will show within \n\n   the dashes in the row.")
+        time.sleep(0.5)
+        print("\n4. If your guess is "
+              "wrong, then you will lose 1 life out of 7 \n\n   and"
+              " you will get a image of a hangman.")
+        time.sleep(0.5)
+        print("\n5. You can play until you run out of"
+              " lives or you guess all the letters.\n")
+        time.sleep(0.5)
         print(
             Fore.YELLOW + Style.BRIGHT + NAME.capitalize() +
-            " are you ready to play?")
+            " are you ready to play?\n")
+        time.sleep(0.5)
         ready = input(
             "Please press Y for" " YES or press N for NO : "
             ).upper()
@@ -248,7 +253,7 @@ class Start(ClearDisplay):
         print("\n")
         while not word_guess and user_tries > 0:
             letter_guess = input(
-                Fore.YELLOW + Style.BRIGHT + "Guess a letter or word: "
+                Fore.YELLOW + Style.BRIGHT + ' '*80, "Guess a letter or word: "
                 ).upper()
             self.clear_terminal()
             letter.append(letter_guess)
