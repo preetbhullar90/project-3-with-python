@@ -257,7 +257,7 @@ class Start(ClearDisplay):
             self.clear_terminal()
             letter.append(letter_guess)
             print(
-                Fore.BLUE + Style.BRIGHT + ' '*50 +
+                Fore.BLUE + Style.BRIGHT + ' '*25 +
                 "You used these letters: " + ", ".join(letter))
             print("\n")
             if len(letter_guess) == 1 and letter_guess.isalpha():
@@ -265,7 +265,7 @@ class Start(ClearDisplay):
                     print(
                         Fore.RED +
                         Style.BRIGHT +
-                        ' '*50 + "you have already selected the letter " +
+                        ' '*25 + "you have already selected the letter " +
                         letter_guess.upper() + "!" + Fore.BLUE
                     )
                 elif letter_guess not in words:
@@ -276,12 +276,12 @@ class Start(ClearDisplay):
                         Fore.BLUE,
                     )
                     print("\n")
-                    print(' '*50 + NAME.capitalize(),
+                    print(' '*25 + NAME.capitalize(),
                           "You have", user_tries - 1, "tries left")
                     user_tries -= 1
                     word_guess_letter.append(letter_guess)
                 else:
-                    print(' '*50
+                    print(' '*25
                           + Fore.GREEN + Style.BRIGHT + NAME.capitalize(),
                           "you are doing well,",
                           letter_guess.upper(),
@@ -299,12 +299,12 @@ class Start(ClearDisplay):
                         word_guess = True
             elif len(letter_guess) == len(words) and letter_guess.isalpha():
                 if letter_guess in word_guess_words:
-                    print(' '*50 +
+                    print(' '*25 +
                           Fore.RED + Style.BRIGHT + " has already been tried",
                           letter_guess.upper() + "!",
                           Fore.BLUE,)
                 elif letter_guess != words:
-                    print(' '*50 +
+                    print(' '*25 +
                           letter_guess.upper(),
                           "is not a part of the word :(",
                           Fore.BLUE,)
@@ -314,18 +314,17 @@ class Start(ClearDisplay):
                     word_guess = True
                     words_complete = words
             else:
-                print(' '*50 + "This is an invalid input",
+                print(' '*25 + "This is an invalid input",
                       Fore.BLUE)
             print(Fore.BLUE + Style.BRIGHT + display_hangman(user_tries))
             print(words_complete)
             print("\n")
         if word_guess:
-            print(
-                Fore.GREEN + Style.BRIGHT + "Congratulations!,",
-                NAME.capitalize(),
-                "you guessed the word correctly!",
-                Fore.BLUE,
-            )
+            print(' '*1 +
+                  Fore.GREEN + Style.BRIGHT + "Congratulations!,",
+                  NAME.capitalize(),
+                  "you guessed the word correctly!",
+                  Fore.BLUE,)
             print("\n")
         else:
             print(
