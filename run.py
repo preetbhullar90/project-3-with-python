@@ -131,8 +131,7 @@ class Start(ClearDisplay):
             self.play_game(word)
         else:
             self.clear_terminal()
-            print("\n")
-            user_no_ready()
+            print(Fore.BLUE + Style.BRIGHT + "\n")
             self.random_word()
 
     def playgame_again(self):
@@ -327,6 +326,7 @@ class Start(ClearDisplay):
                 ". Better luck next time !",
             )
             print("\n")
+            self.clear_terminal()
         self.playgame_again()
 
 
