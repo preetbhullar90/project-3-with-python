@@ -81,6 +81,7 @@ class Start(ClearDisplay):
             print("\033[1;34m")
             hangman_ascii_text()
             time.sleep(0.5)
+            self.clear_terminal()
             self.random_word()
 
     def game_instruction(self):
@@ -130,13 +131,9 @@ class Start(ClearDisplay):
             self.play_game(word)
         else:
             self.clear_terminal()
-            print(
-                Style.BRIGHT + Fore.BLUE + "Thank you,",
-                NAME.capitalize(),
-                "for trying see you again when you are ready",
-            )
             print("\n")
             user_no_ready()
+            self.random_word()
 
     def playgame_again(self):
         """
@@ -253,39 +250,36 @@ class Start(ClearDisplay):
         print("\n")
         while not word_guess and user_tries > 0:
             letter_guess = input(Fore.YELLOW + Style.BRIGHT +
-                                 ' '*80 + "Guess a letter or word: ").upper()
+                                 "Guess a letter or word: ").upper()
             self.clear_terminal()
             letter.append(letter_guess)
             print(
-                Fore.BLUE + Style.BRIGHT + ' '*25 +
+                Fore.BLUE + Style.BRIGHT +
                 "You used these letters: " + ", ".join(letter))
             print("\n")
             if len(letter_guess) == 1 and letter_guess.isalpha():
                 if letter_guess in word_guess_letter:
                     print(
-                        Fore.RED +
-                        Style.BRIGHT +
-                        ' '*25 + "you have already selected the letter " +
+                        Fore.RED + Style.BRIGHT +
+                        "you have already selected the letter " +
                         letter_guess.upper() + "!" + Fore.BLUE
                     )
                 elif letter_guess not in words:
                     print(
-                        Fore.RED + Style.BRIGHT + ' '*50 +
+                        Fore.RED + Style.BRIGHT +
                         letter_guess.upper(),
                         " is not a part of the word :(",
                         Fore.BLUE,
                     )
                     print("\n")
-                    print(' '*25 + NAME.capitalize(),
+                    print(NAME.capitalize(),
                           "You have", user_tries - 1, "tries left")
                     user_tries -= 1
                     word_guess_letter.append(letter_guess)
                 else:
-                    print(' '*25
-                          + Fore.GREEN + Style.BRIGHT + NAME.capitalize(),
-                          "you are doing well,",
-                          letter_guess.upper(),
-                          "is in the word!" + Fore.BLUE)
+                    print(Fore.GREEN + Style.BRIGHT + NAME.capitalize(),
+                          "you are doing well,", letter_guess.upper(),
+                          " is in the word!" + Fore.BLUE)
                     word_guess_letter.append(letter_guess)
                     word_as_list = list(words_complete)
                     indices = [
@@ -299,13 +293,12 @@ class Start(ClearDisplay):
                         word_guess = True
             elif len(letter_guess) == len(words) and letter_guess.isalpha():
                 if letter_guess in word_guess_words:
-                    print(' '*25 +
+                    print(
                           Fore.RED + Style.BRIGHT + " has already been tried",
                           letter_guess.upper() + "!",
                           Fore.BLUE,)
                 elif letter_guess != words:
-                    print(' '*25 +
-                          letter_guess.upper(),
+                    print(letter_guess.upper(),
                           "is not a part of the word :(",
                           Fore.BLUE,)
                     user_tries -= 1
@@ -314,13 +307,12 @@ class Start(ClearDisplay):
                     word_guess = True
                     words_complete = words
             else:
-                print(' '*25 + "This is an invalid input",
-                      Fore.BLUE)
+                print("This is an invalid input", Fore.BLUE)
             print(Fore.BLUE + Style.BRIGHT + display_hangman(user_tries))
             print(words_complete)
             print("\n")
         if word_guess:
-            print(' '*1 +
+            print(
                   Fore.GREEN + Style.BRIGHT + "Congratulations!,",
                   NAME.capitalize(),
                   "you guessed the word correctly!",
