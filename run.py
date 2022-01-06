@@ -200,8 +200,6 @@ class Start(ClearDisplay):
                 Fore.YELLOW + Style.BRIGHT + NAME.capitalize() + ","
                 " Please choose your choice (Y, I, Q): ").upper()
         if get_ready == "Y":
-            print("\n")
-            print("Game loading...")
             time.sleep(2)
             self.clear_terminal()
             word = random.choice(self.get_all_words())
@@ -218,6 +216,7 @@ class Start(ClearDisplay):
             print("\n")
             user_no_ready()
         else:
+            self.clear_terminal()
             self.random_word()
 
     def play_game(self, words):
