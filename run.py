@@ -200,7 +200,6 @@ class Start(ClearDisplay):
                 Fore.YELLOW + Style.BRIGHT + NAME.capitalize() + ","
                 " Please choose your choice (Y, I, Q): ").upper()
         if get_ready == "Y":
-            time.sleep(2)
             self.clear_terminal()
             word = random.choice(self.get_all_words())
             self.play_game(word)
@@ -255,7 +254,7 @@ class Start(ClearDisplay):
             print(
                 Fore.BLUE + Style.BRIGHT +
                 "You used these letters: " + ", ".join(no_repeat_letter))
-            print("\n")
+            #print("\n")
             if len(letter_guess) == 1 and letter_guess.isalpha():
                 if letter_guess in word_guess_letter:
                     print(
@@ -311,27 +310,27 @@ class Start(ClearDisplay):
             print(words_complete)
             print("\n")
         if word_guess:
-            self.clear_terminal()
-            print(Fore.BLUE + Style.BRIGHT + display_hangman(user_tries))
-            user_tries -= 1
+            #self.clear_terminal()
+            #print(Fore.BLUE + Style.BRIGHT + display_hangman(user_tries))
+            #user_tries -= 1
             print(
                   Fore.GREEN + Style.BRIGHT + "Congratulations!,",
                   NAME.capitalize(),
                   "you guessed the word correctly!",
                   Fore.BLUE,)
-            print("\n")
+            #print("\n")
         else:
-            self.clear_terminal()
-            print(Fore.BLUE + Style.BRIGHT + display_hangman(user_tries))
-            user_tries -= 1
+            #self.clear_terminal()
+            # print(Fore.BLUE + Style.BRIGHT + display_hangman(user_tries))
+            #user_tries -= 1
             print(
                 Fore.BLUE + Style.BRIGHT + "Sorry,",
                 NAME.capitalize(),
                 " you ran out of tries.The correct word was ",
                 Fore.RED + Style.BRIGHT + words + Fore.BLUE + Style.BRIGHT,
-                ". Better luck next time !",
+                ". Better luck \n next time !",
             )
-            print("\n")
+            #print("\n")
         self.playgame_again()
 
 
