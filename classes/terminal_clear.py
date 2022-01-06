@@ -13,7 +13,4 @@ class ClearDisplay():
         """"
         Clears the console
         """
-        terminal = 'clear'
-        if os.name in ('nt', 'dos'):
-            terminal = 'cls'
-        os.system(terminal)
+        os.system('cls' if os.name == 'nt' else 'clear')
