@@ -81,7 +81,7 @@ class Start(ClearDisplay):
             print("\033[1;34m")
             hangman_ascii_text()
             time.sleep(0.5)
-            self.clear_terminal()
+            #self.clear_terminal()
             self.random_word()
 
     def game_instruction(self):
