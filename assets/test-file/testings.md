@@ -29,7 +29,7 @@ The second option provided is for new players who are not familiar with the game
 * Another function I have added to the game to make it more user-friendly is to see all the previously guessed letters. This ensures that the player has a smooth gaming experience and does not select the same letters as before although if they do this I have added a function where a message appears in red informing them that they have already used this letter before.
 
 4. As a new player, I want this game to be challenging therefore I do not want access to the word list.
-* For new players, I added all the words in gspread sheet and linked it with creds.
+* For new players, I added all the words in google spread sheet and linked it with creds.
 * I have added this function to make the game more challenging and to prevent the player from cheating by opening the word list page because this is not possible when the words are linked using gspread sheet as I have done in the development of my game.
 
 #### Current players Goals:

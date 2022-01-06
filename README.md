@@ -119,7 +119,7 @@ This is my 3rd project at code institute. I developed hangman the word game, whi
   ***All the images are found*** [here](assets/game-screenshot/screenshot.md)
 
 #### Play again :
-* Users will get the play again option whether they win or lose. If they select Y they the game will restart with a new word. If they select N then they will get a message saying “thanks for playing see you again” with a big goodbye title after this they will exit the game.
+* Users will get the play again option whether they win or lose. If they select Y they the game will restart with a new word. If they select N then they will get a menu option.
 
   ***All the images are found*** [here](assets/game-screenshot/screenshot.md)
 
@@ -128,8 +128,7 @@ This game is following this flow diagram:
 ![](assets/readme-files/diagram.png)
 
 ## Bugs
-* The first bug I was having issues with was getting a random word every time. The reason I had this bug was because my code was not using loop to cycle through the word list cells in gspread sheet.
-* I solved this problem with the help of stack overflow.
+* The first bug I was having issues with was getting a random word every time. The reason I had this bug was because my code was not using loop to cycle through the word list cells in google spread sheet.I solved this problem with the help of stack overflow.
 
 
 
@@ -144,7 +143,7 @@ This game is following this flow diagram:
 [Go Top](#Hangman-Game)
 
 ## Other Features
-* I used gspread sheet for the word list, because if you import your word list file to the terminal, then the user can see the word list. I developed the game in this way to make the game interesting and challenging.
+* I used google spread sheet for the word list, because if you import your word list file to the terminal, then the user can see the word list. I developed the game in this way to make the game interesting and challenging.
 * I imported OS into the python terminal to clear the terminal of the previous text according to the next option.
 * I imported Time into the terminal to add a delay during the game in between the user selecting an option and the next option being displayed. For example, I added time for the phrases (wait…) and (game loading…) as it gives a nice effect in a terminal game.
 * The entered username is saved in the terminal, because when the user replays the game after either winning or losing in the same session his name will not need to be re-entered unless they exit the game.

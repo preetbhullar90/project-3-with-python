@@ -81,7 +81,6 @@ class Start(ClearDisplay):
             print("\033[1;34m")
             hangman_ascii_text()
             time.sleep(0.5)
-            self.clear_terminal()
             self.random_word()
 
     def game_instruction(self):
@@ -252,9 +251,10 @@ class Start(ClearDisplay):
                                  "Guess a letter or word: ").upper()
             self.clear_terminal()
             letter.append(letter_guess)
+            no_repeat_letter = list(dict.fromkeys(letter))
             print(
                 Fore.BLUE + Style.BRIGHT +
-                "You used these letters: " + ", ".join(letter))
+                "You used these letters: " + ", ".join(no_repeat_letter))
             print("\n")
             if len(letter_guess) == 1 and letter_guess.isalpha():
                 if letter_guess in word_guess_letter:
@@ -311,6 +311,7 @@ class Start(ClearDisplay):
             print(words_complete)
             print("\n")
         if word_guess:
+            no_repeat_letter = ''
             print(
                   Fore.GREEN + Style.BRIGHT + "Congratulations!,",
                   NAME.capitalize(),
@@ -318,6 +319,7 @@ class Start(ClearDisplay):
                   Fore.BLUE,)
             print("\n")
         else:
+            no_repeat_letter = ''
             print(
                 Fore.BLUE + Style.BRIGHT + "Sorry,",
                 NAME.capitalize(),
@@ -326,7 +328,6 @@ class Start(ClearDisplay):
                 ". Better luck next time !",
             )
             print("\n")
-            self.clear_terminal()
         self.playgame_again()
 
 
