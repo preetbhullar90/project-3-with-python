@@ -311,7 +311,9 @@ class Start(ClearDisplay):
             print(words_complete)
             print("\n")
         if word_guess:
-            no_repeat_letter = ''
+            self.clear_terminal()
+            print(Fore.BLUE + Style.BRIGHT + display_hangman(user_tries))
+            user_tries -= 1
             print(
                   Fore.GREEN + Style.BRIGHT + "Congratulations!,",
                   NAME.capitalize(),
@@ -319,7 +321,9 @@ class Start(ClearDisplay):
                   Fore.BLUE,)
             print("\n")
         else:
-            no_repeat_letter = ''
+            self.clear_terminal()
+            print(Fore.BLUE + Style.BRIGHT + display_hangman(user_tries))
+            user_tries -= 1
             print(
                 Fore.BLUE + Style.BRIGHT + "Sorry,",
                 NAME.capitalize(),
