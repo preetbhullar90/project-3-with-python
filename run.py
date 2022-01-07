@@ -250,9 +250,10 @@ class Start(ClearDisplay):
             self.clear_terminal()
             letter.append(letter_guess)
             no_repeat_letter = list(dict.fromkeys(letter))
-            print('{:^50}'.format(
+            str_one = (
                   Fore.BLUE + Style.BRIGHT +
-                  "You used these letters: " + ", ".join(no_repeat_letter)))
+                  "You used these letters: " + ", ".join(no_repeat_letter))
+            print(str_one.center(80))
             print("\n")
             if len(letter_guess) == 1 and letter_guess.isalpha():
                 if letter_guess in word_guess_letter:
