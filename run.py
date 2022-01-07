@@ -250,10 +250,9 @@ class Start(ClearDisplay):
             self.clear_terminal()
             letter.append(letter_guess)
             no_repeat_letter = list(dict.fromkeys(letter))
-            str_one = (
+            print(
                   Fore.BLUE + Style.BRIGHT +
                   "You used these letters: " + ", ".join(no_repeat_letter))
-            print(str_one.center(80))
             print("\n")
             if len(letter_guess) == 1 and letter_guess.isalpha():
                 if letter_guess in word_guess_letter:
@@ -297,15 +296,15 @@ class Start(ClearDisplay):
                           Fore.BLUE,)
                 elif letter_guess != words:
                     print(letter_guess.upper(),
-                          "is not a part of the word :(",
-                          Fore.BLUE,)
+                          "is not a part of the word :(", Fore.BLUE,)
                     user_tries -= 1
                     word_guess_words.append(letter_guess)
                 else:
                     word_guess = True
                     words_complete = words
             else:
-                print("This is an invalid input", Fore.BLUE)
+                print(Fore.RED + Style.BRIGHT +
+                      "This is an invalid input", Fore.BLUE)
             print(Fore.BLUE + Style.BRIGHT + display_hangman(user_tries))
             print(words_complete)
             print("\n")
