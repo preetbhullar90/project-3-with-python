@@ -81,7 +81,6 @@ class Start(ClearDisplay):
             print("\033[1;34m")
             hangman_ascii_text()
             time.sleep(0.5)
-            #self.clear_terminal()
             self.random_word()
 
     def game_instruction(self):
@@ -251,9 +250,9 @@ class Start(ClearDisplay):
             self.clear_terminal()
             letter.append(letter_guess)
             no_repeat_letter = list(dict.fromkeys(letter))
-            print(
-                Fore.BLUE + Style.BRIGHT +
-                "You used these letters: " + ", ".join(no_repeat_letter))
+            print('{:^24s}'.format(
+                  Fore.BLUE + Style.BRIGHT +
+                  "You used these letters: " + ", ".join(no_repeat_letter)))
             print("\n")
             if len(letter_guess) == 1 and letter_guess.isalpha():
                 if letter_guess in word_guess_letter:
