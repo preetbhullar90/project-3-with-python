@@ -250,7 +250,7 @@ class Start(ClearDisplay):
             self.clear_terminal()
             letter.append(letter_guess)
             no_repeat_letter = list(dict.fromkeys(letter))
-            print('{:^24s}'.format(
+            print('{:^50}'.format(
                   Fore.BLUE + Style.BRIGHT +
                   "You used these letters: " + ", ".join(no_repeat_letter)))
             print("\n")
