@@ -93,21 +93,23 @@ class Start(ClearDisplay):
         print(Fore.YELLOW + Style.BRIGHT + "wait...")
         time.sleep(0.5)
         self.clear_terminal()
-        print(Fore.BLUE + Style.BRIGHT + "\n\033[1;34mHow to play:\n\n ")
+        print(Fore.BLUE + Style.BRIGHT + "\n\033[1;34mHow to play:\n ")
         time.sleep(0.5)
-        print("\n1. You need to guess the word correctly from the word list.")
+        print("\n1. The theme of the game is fruits.")
         time.sleep(0.5)
-        print("\n2. You need to write a letter "
+        print("\n2. You need to guess the word correctly from the word list.")
+        time.sleep(0.5)
+        print("\n3. You need to write a letter "
               "of your choice and press enter.")
         time.sleep(0.5)
-        print("\n3. If your guess is correct then the "
+        print("\n4. If your guess is correct then the "
               "letter will show within \n\n   the dashes in the row.")
         time.sleep(0.5)
-        print("\n4. If your guess is "
+        print("\n5. If your guess is "
               "wrong, then you will lose 1 life out of 7 \n\n   and"
               " you will get a image of a hangman.")
         time.sleep(0.5)
-        print("\n5. You can play until you run out of"
+        print("\n6. You can play until you run out of"
               " lives or you guess all the letters.\n")
         time.sleep(0.5)
         print(
@@ -140,14 +142,15 @@ class Start(ClearDisplay):
         If user selects Y game will run again, but if user selects N the
         game will exit with their username and a nice message.
         """
-        play_again = input(
-            Fore.YELLOW + Style.BRIGHT + "Would you like to play "
-            "again? If Yes press Y If No press N: "
-        ).upper()
+        play_again = input(' '*10 +
+                           Fore.YELLOW + Style.BRIGHT +
+                           "Would you like to play "
+                           "again? If Yes press Y If No press N: "
+                           ).upper()
         while play_again != "Y" and play_again != "N":
             self.clear_terminal()
             play_again = input(
-                "Would you like to play again? "
+                ' '*10 + "Would you like to play again? "
                 "If Yes press Y If No press N: "
             ).upper()
         if play_again == "Y":
@@ -241,41 +244,41 @@ class Start(ClearDisplay):
         time.sleep(0.5)
         self.clear_terminal()
         print(Fore.BLUE + Style.BRIGHT + display_hangman(user_tries))
-        print(Style.BRIGHT + words_complete)
+        print(Style.BRIGHT + words_complete.center(80))
         time.sleep(0.5)
         print("\n")
         while not word_guess and user_tries > 0:
             letter_guess = input(Fore.YELLOW + Style.BRIGHT +
-                                 "Guess a letter or word: ").upper()
+                                 ' '*28 + "Guess a letter or word: ").upper()
             self.clear_terminal()
             letter.append(letter_guess)
             no_repeat_letter = list(dict.fromkeys(letter))
-            print(
+            string_one = (
                   Fore.BLUE + Style.BRIGHT +
                   "You used these letters: " + ", ".join(no_repeat_letter))
+            print(string_one.center(95))
             print("\n")
             if len(letter_guess) == 1 and letter_guess.isalpha():
                 if letter_guess in word_guess_letter:
-                    print(
-                        Fore.RED + Style.BRIGHT +
-                        "you have already selected the letter " +
-                        letter_guess.upper() + "!" + Fore.BLUE
-                    )
+                    print(' '*25 +
+                          Fore.RED + Style.BRIGHT +
+                          "you have already selected the letter " +
+                          letter_guess.upper() + "!" + Fore.BLUE
+                          )
                 elif letter_guess not in words:
-                    print(
-                        Fore.RED + Style.BRIGHT +
-                        letter_guess.upper(),
-                        " is not a part of the word :(",
-                        Fore.BLUE,
-                    )
+                    print(' '*27 +
+                          Fore.RED + Style.BRIGHT +
+                          letter_guess.upper(),
+                          " is not a part of the word :(",
+                          Fore.BLUE,)
                     print("\n")
-                    print(NAME.capitalize(),
+                    print(' '*30 +
                           "You have", user_tries - 1, "tries left")
                     user_tries -= 1
                     word_guess_letter.append(letter_guess)
                 else:
-                    print(Fore.GREEN + Style.BRIGHT + NAME.capitalize(),
-                          "you are doing well,", letter_guess.upper(),
+                    print(' '*25 + Fore.GREEN + Style.BRIGHT +
+                          "You are doing well,", letter_guess.upper(),
                           " is in the word!" + Fore.BLUE)
                     word_guess_letter.append(letter_guess)
                     word_as_list = list(words_complete)
@@ -290,12 +293,12 @@ class Start(ClearDisplay):
                         word_guess = True
             elif len(letter_guess) == len(words) and letter_guess.isalpha():
                 if letter_guess in word_guess_words:
-                    print(
+                    print(' '*100 +
                           Fore.RED + Style.BRIGHT + " has already been tried",
                           letter_guess.upper() + "!",
                           Fore.BLUE,)
                 elif letter_guess != words:
-                    print(letter_guess.upper(),
+                    print(' '*100 + letter_guess.upper(),
                           "is not a part of the word :(", Fore.BLUE,)
                     user_tries -= 1
                     word_guess_words.append(letter_guess)
@@ -303,25 +306,24 @@ class Start(ClearDisplay):
                     word_guess = True
                     words_complete = words
             else:
-                print(Fore.RED + Style.BRIGHT +
+                print(' '*30 + Fore.RED + Style.BRIGHT +
                       "This is an invalid input", Fore.BLUE)
             print(Fore.BLUE + Style.BRIGHT + display_hangman(user_tries))
-            print(words_complete)
+            print(words_complete.center(80))
             print("\n")
         if word_guess:
-            print(
+            print(' '*10 +
                   Fore.GREEN + Style.BRIGHT + "Congratulations!,",
-                  NAME.capitalize(),
+                  NAME.capitalize() +
                   "you guessed the word correctly!",
                   Fore.BLUE,)
         else:
-            print(
-                Fore.BLUE + Style.BRIGHT + "Sorry,",
-                NAME.capitalize(),
-                " you ran out of tries.The correct word was ",
-                Fore.RED + Style.BRIGHT + words + Fore.BLUE + Style.BRIGHT,
-                ". Better luck \n next time !",
-            )
+            print(' '*5 +
+                  Fore.BLUE + Style.BRIGHT + "Sorry,",
+                  NAME.capitalize(),
+                  " you ran out of tries.The correct word was ",
+                  Fore.RED + Style.BRIGHT + words + Fore.BLUE + Style.BRIGHT,
+                  ". Better luck \n next time !",)
         self.playgame_again()
 
 
