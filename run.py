@@ -270,6 +270,7 @@ class Start(ClearDisplay):
                           letter_guess.upper(),
                           " is not a part of the word :(",
                           Fore.BLUE,)
+                    print('\n')
                     print(' '*30 +
                           "You have", user_tries - 1, "tries left")
                     user_tries -= 1

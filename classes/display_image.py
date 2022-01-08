@@ -12,7 +12,6 @@ def display_hangman(user_tries):
     """
     image_stages = [
                                     """
-
                                     --------
                                     |      |
                                     |      O
@@ -67,7 +66,6 @@ def display_hangman(user_tries):
                                     -
                                     """,
                                     """
-
                                     --------
                                     |      |
                                     |
