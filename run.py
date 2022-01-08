@@ -323,7 +323,7 @@ class Start(ClearDisplay):
                   NAME.capitalize(),
                   " you ran out of tries.The correct word was ",
                   Fore.RED + Style.BRIGHT + words + Fore.BLUE + Style.BRIGHT,
-                  ". Better luck \n next time !",)
+                  ". Better luck next time !",)
         self.playgame_again()
 
 
