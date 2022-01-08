@@ -257,7 +257,6 @@ class Start(ClearDisplay):
                   Fore.BLUE + Style.BRIGHT +
                   "You used these letters: " + ", ".join(no_repeat_letter))
             print(string_one.center(95))
-            print("\n")
             if len(letter_guess) == 1 and letter_guess.isalpha():
                 if letter_guess in word_guess_letter:
                     print(' '*25 +
@@ -271,7 +270,6 @@ class Start(ClearDisplay):
                           letter_guess.upper(),
                           " is not a part of the word :(",
                           Fore.BLUE,)
-                    print("\n")
                     print(' '*30 +
                           "You have", user_tries - 1, "tries left")
                     user_tries -= 1
@@ -310,7 +308,7 @@ class Start(ClearDisplay):
                       "This is an invalid input", Fore.BLUE)
             print(Fore.BLUE + Style.BRIGHT + display_hangman(user_tries))
             print(words_complete.center(80))
-            print("\n")
+            print('\n')
         if word_guess:
             print(' '*10 +
                   Fore.GREEN + Style.BRIGHT + "Congratulations!,",
