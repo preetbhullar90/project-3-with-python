@@ -60,28 +60,38 @@ class Start(ClearDisplay):
         time.sleep(2)
         self.clear_terminal()
         print("\n")
-        while not NAME.isalpha() and NAME.isnumeric() or len(NAME) < 2:
-            print("\n")
-            print("wait...")
-            time.sleep(2)
-            self.clear_terminal()
-            print(
-                Fore.RED + "Sorry, Your name is invalid, please "
-                "enter your full name in letters\n"
-            )
-            print("\n")
-            NAME = input(Fore.YELLOW + Style.BRIGHT +
-                         "Please enter your name: ")
-        else:
-            print("\n")
-            print("Game loading...")
-            print("\n")
-            time.sleep(2)
-            self.clear_terminal()
-            print("\033[1;34m")
-            hangman_ascii_text()
-            time.sleep(0.5)
-            self.random_word()
+        while True:
+            if not NAME.isalpha() and NAME.isnumeric() or len(NAME) < 2:
+                print("\n")
+                print("wait...")
+                time.sleep(2)
+                self.clear_terminal()
+                print(
+                    Fore.RED + "Sorry, Your name is invalid, please "
+                    "enter your full name in letters\n"
+                )
+                print("\n")
+                NAME = input(Fore.YELLOW + Style.BRIGHT +
+                             "Please enter your name: ")
+            elif len(NAME) > 15:
+                print("\n")
+                print("wait...")
+                time.sleep(2)
+                self.clear_terminal()
+                print(Fore.RED + 'Sorry, Your name length is too long')
+                print("\n")
+                NAME = input(Fore.YELLOW + Style.BRIGHT +
+                             "Please enter your name: ")
+            else:
+                print("\n")
+                print("Game loading...")
+                print("\n")
+                time.sleep(2)
+                self.clear_terminal()
+                print("\033[1;34m")
+                hangman_ascii_text()
+                time.sleep(0.5)
+                self.random_word()
 
     def game_instruction(self):
         """
@@ -314,7 +324,7 @@ class Start(ClearDisplay):
             print(' '*10 +
                   Fore.GREEN + Style.BRIGHT + "Congratulations!,",
                   NAME.capitalize() +
-                  "you guessed the word correctly!",
+                  " you guessed the word correctly!",
                   Fore.BLUE,)
         else:
             print(' '*5 +
