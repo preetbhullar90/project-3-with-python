@@ -92,6 +92,7 @@ class Start(ClearDisplay):
                 hangman_ascii_text()
                 time.sleep(0.5)
                 self.random_word()
+                break
 
     def game_instruction(self):
         """

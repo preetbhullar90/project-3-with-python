@@ -104,12 +104,11 @@ This is my 3rd project at code institute. I developed hangman the word game, whi
 4. Play again.
 
 #### Starting page :
-* On the starting page, users will get an input for entering their name, if the user enters fewer than 2 letters or digits, they will get an error message. If the user enters a valid name, then they will see menu below the hangman title text. In this menu users will get 3 options either to see the instructions, quit or to start playing the game. If the user selects the instructions option, they will see instructions about how to play this game and at the bottom of the instructions text, they will see 2 more options. The 2 options the user can choose from are “Are you ready to play?” if the user selects Y they will enter in the main game where they guess the word but if they select N then the terminal will exit with a message saying, “See you again, when you are ready”.
-
+* On the starting page, users will get an input for entering their name, if the user enters fewer than 2 letters or digits, they will get an error message. If the user enters a valid name, then they will see menu below the hangman title text. In this menu users will get 3 options either to see the instructions, quit or to start playing the game. If the user selects the instructions option, they will see instructions about how to play this game and at the bottom of the instructions text, they will see 2 more options. The 2 options the user can choose from are “Are you ready to play?” if the user selects Y they will enter in the main game where they guess the word but if they select N then they will go in the main menu again.
   ***All the images are found*** [here](assets/game-screenshot/screenshot.md)
 
 #### Guess the word page :
-* On the guess the word page, users will get an image of a hangman with a row of dashes, with 6 lives. On this page users have to guess letters of a word which is in the games word list, if the users guess is incorrect, they will see the next part of the hangman image and the user will lose 1 life, but if the user guesses the correct letter, then that letter is added in the row of dashes and hangman image and lives will stay same. When the user enters the correct letter, they will also get a message to say well-done with their username. If users select a letter they have used before they will receive a message saying “you have already tried this word and if users tried a number or other special character, then they will see the message that this letter is not in the word list. But the hangman image and lives will stay the same.
+* On the guess the word page, users will get an image of a hangman with a row of dashes, with 6 lives. On this page users have to guess letters of a word which is in the games word list, if the users guess is incorrect, they will see the next part of the hangman image and the user will lose 1 life, but if the user guesses the correct letter, then that letter is added in the row of dashes and hangman image and lives will stay same. When the user enters the correct letter, they will also get a message to say you are doing well. If users select a letter they have used before they will receive a message saying “you have already tried this word and if users tried a number or other special character, then they will see the message that this letter is not in the word list. But the hangman image and lives will stay the same.
 
   ***All the images are found*** [here](assets/game-screenshot/screenshot.md)
 
@@ -119,7 +118,7 @@ This is my 3rd project at code institute. I developed hangman the word game, whi
   ***All the images are found*** [here](assets/game-screenshot/screenshot.md)
 
 #### Play again :
-* Users will get the play again option whether they win or lose. If they select Y they the game will restart with a new word. If they select N then they will get a menu option.
+* Users will get the play again option whether they win or lose. If they select Y they the game will restart with a new word. If they select N then they will get a message say "thanks for playing, see you again.
 
   ***All the images are found*** [here](assets/game-screenshot/screenshot.md)
 
@@ -134,9 +133,9 @@ This game is following this flow diagram:
 
 
 ## Issue Left
-* The game is working smoothly. I didn’t leave any bugs in the game but there are 2 errors. The first error is (Global variable ‘Name’ undefined at the module level), and the second error is (Else clause on loop without a break statement).
+* The game is working smoothly. I didn’t leave any bugs in the game but there is 1 error. The error is (Global variable ‘Name’ undefined at the module level).
 
-* I have included screenshots of the errors below:
+* I have included screenshots of the error below:
 #### Error
 ![](assets/readme-files/hangman-error.PNG)
 
