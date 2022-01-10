@@ -117,7 +117,7 @@ class Start(ClearDisplay):
               "letter will show within \n\n   the dashes in the row.")
         time.sleep(0.5)
         print("\n5. If your guess is "
-              "wrong, then you will lose 1 life out of 7 \n\n   and"
+              "wrong, then you will lose 1 life out of 6 \n\n   and"
               " you will get a image of a hangman.")
         time.sleep(0.5)
         print("\n6. You can play until you run out of"
@@ -333,9 +333,10 @@ class Start(ClearDisplay):
             game_lose = (
                     Fore.BLUE + Style.BRIGHT + "Sorry, " + NAME.capitalize() +
                     " you ran out of tries.The correct word was " +
-                    Fore.RED + Style.BRIGHT + words + '.' + Fore.BLUE +
-                    Style.BRIGHT + "\n Better luck next time !")
-            print(game_lose.center(135))
+                    Fore.RED + Style.BRIGHT + words + Fore.BLUE + '.' +
+                    Style.BRIGHT)
+            print(game_lose.center(110))
+            print(' '*30 + "Better luck next time !")
         self.playgame_again()
 
 
