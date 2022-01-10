@@ -264,10 +264,10 @@ class Start(ClearDisplay):
             self.clear_terminal()
             letter.append(letter_guess)
             no_repeat_letter = list(dict.fromkeys(letter))
-            string_one = (
+            used_letter = (
                   Fore.BLUE + Style.BRIGHT +
                   "You used these letters: " + ", ".join(no_repeat_letter))
-            print(string_one.center(95))
+            print(used_letter.center(95))
             if len(letter_guess) == 1 and letter_guess.isalpha():
                 if letter_guess in word_guess_letter:
                     print(' '*25 +
@@ -322,19 +322,20 @@ class Start(ClearDisplay):
             print(words_complete.center(80))
             print('\n')
         if word_guess:
-            print(' '*10 +
-                  Fore.GREEN + Style.BRIGHT + "Congratulations!,",
+            game_win = (
+                  Fore.GREEN + Style.BRIGHT + "Congratulations!," +
                   NAME.capitalize() +
-                  " you guessed the word correctly!",
-                  Fore.BLUE,)
+                  " you guessed the word correctly!" +
+                  Fore.BLUE)
+            print(game_win.center(100))
         else:
 
-            string_two = (
-                      Fore.BLUE + Style.BRIGHT + "Sorry, " + NAME.capitalize()
-                      + " you ran out of tries.The correct word was " +
-                      Fore.RED + Style.BRIGHT + words + '.' + Fore.BLUE +
-                      Style.BRIGHT + "\n Better luck next time !")
-            print(string_two.center(50))
+            game_lose = (
+                    Fore.BLUE + Style.BRIGHT + "Sorry, " + NAME.capitalize() +
+                    " you ran out of tries.The correct word was " +
+                    Fore.RED + Style.BRIGHT + words + '.' + Fore.BLUE +
+                    Style.BRIGHT + "\n Better luck next time !")
+            print(game_lose.center(135))
         self.playgame_again()
 
 
