@@ -334,7 +334,7 @@ class Start(ClearDisplay):
                       + " you ran out of tries.The correct word was " +
                       Fore.RED + Style.BRIGHT + words + '.' + Fore.BLUE +
                       Style.BRIGHT + "\n Better luck next time !")
-            print(string_two.center(10))
+            print(string_two.center(50))
         self.playgame_again()
 
 
