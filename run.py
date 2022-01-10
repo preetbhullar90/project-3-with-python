@@ -328,12 +328,13 @@ class Start(ClearDisplay):
                   " you guessed the word correctly!",
                   Fore.BLUE,)
         else:
-            print(' '*5 +
-                  Fore.BLUE + Style.BRIGHT + "Sorry,",
-                  NAME.capitalize(),
-                  " you ran out of tries.The correct word was ",
-                  Fore.RED + Style.BRIGHT + words + Fore.BLUE + Style.BRIGHT,
-                  ". Better luck next time !",)
+
+            string_two = (
+                      Fore.BLUE + Style.BRIGHT + "Sorry, " + NAME.capitalize()
+                      + " you ran out of tries.The correct word was " +
+                      Fore.RED + Style.BRIGHT + words + '.' + Fore.BLUE +
+                      Style.BRIGHT + " Better luck next time !")
+            print(string_two.center(10))
         self.playgame_again()
 
 
