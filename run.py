@@ -177,6 +177,10 @@ class Start(ClearDisplay):
             )
             print("\n")
             after_finish_game()
+            print(
+                  "If you would like to play again, just refresh the"
+                  "page or press the\n'RUN HANGMAN' button above!\n"
+                  )
 
     def random_word(self):
         """
@@ -227,6 +231,12 @@ class Start(ClearDisplay):
             )
             print("\n")
             user_no_ready()
+            print("\n")
+            print(
+                  "If you would like to play again, just refresh the"
+                  "page or press the\n'RUN HANGMAN' button above!\n"
+                  )
+
         else:
             self.clear_terminal()
             self.random_word()
@@ -335,8 +345,8 @@ class Start(ClearDisplay):
                     " you ran out of tries.The correct word was " +
                     Fore.RED + Style.BRIGHT + words + Fore.BLUE + '.' +
                     Style.BRIGHT)
-            print(game_lose.center(110))
-            print(' '*30 + "Better luck next time !")
+            print(game_lose.center(110) + '\n' + ' '*30,
+                  "Better luck next time !")
         self.playgame_again()
 
 
