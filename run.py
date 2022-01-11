@@ -179,7 +179,7 @@ class Start(ClearDisplay):
             after_finish_game()
             print(
                   "If you would like to play again, just refresh the"
-                  "page or press the\n'RUN HANGMAN' button above!\n"
+                  " page or press the\n'RUN HANGMAN' button above!\n"
                   )
 
     def random_word(self):
@@ -234,7 +234,7 @@ class Start(ClearDisplay):
             print("\n")
             print(
                   "If you would like to play again, just refresh the"
-                  "page or press the\n'RUN HANGMAN' button above!\n"
+                  " page or press the\n'RUN HANGMAN' button above!\n"
                   )
 
         else:
