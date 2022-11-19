@@ -2,7 +2,7 @@
 
 ![Hangman Game Images](assets/test-file/hangman-responsive.PNG)
 
-[View the live project here](https://hangman-games.herokuapp.com/)
+[View the live project here](https://hangman-3a34.onrender.com/)
 
 ## Contents
 1. [Introduction](#Introduction)

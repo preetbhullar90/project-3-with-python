@@ -2,7 +2,7 @@
 
 [README.md file](/README.md)
 
-[View live project](https://hangman-games.herokuapp.com/)
+[View live project](https://hangman-3a34.onrender.com/)
 
 [View website in GitHub Pages](https://github.com/preetbhullar90/project-3-with-python)
 
